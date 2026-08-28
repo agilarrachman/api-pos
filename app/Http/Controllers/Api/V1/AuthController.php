@@ -21,7 +21,7 @@ class AuthController extends Controller
             return ApiResponse::error('Invalid credentials', Response::HTTP_UNAUTHORIZED);
         }
 
-        $token = $user->createToken('auth_token')->plainTextToken;
+        $token = $user->createToken('auth_token') ->plainTextToken;
 
         return ApiResponse::success([
             'token' => $token,
