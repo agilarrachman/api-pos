@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\ProductCategoryController;
 use App\Http\Controllers\Api\V1\ProductCategoryImageController;
 use App\Http\Controllers\Api\V1\ProductController;
@@ -22,5 +23,9 @@ Route::prefix('v1')->group(function () {
         Route::get('/products/options', [ProductController::class, 'options']);
         Route::apiResource('products', ProductController::class);
         Route::post('/products/{id}/image', [ProductImageController::class, 'store']);
+
+        Route::get('/customers/options', [CustomerController::class, 'options']);
+        Route::apiResource('customers', CustomerController::class);
     });
 });
+
